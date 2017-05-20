@@ -1,0 +1,32 @@
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LaTeXparent=0,0,Master.tex}
+                      
+%TCIDATA{ChildDefaults=chapter:4,page:1}
+
+
+\chapter{New Chapter\label{ch:new}}
+
+%TCIMACRO{\TeXButton{B Figure}{\begin{figure}[tb]}}%
+%BeginExpansion
+\begin{figure}[tb]%
+%EndExpansion
+\begin{equation*}
+\begin{array}{rll}
+A & \overset{f}{\longrightarrow } & A \\ 
+g\downarrow &  & \downarrow g \\ 
+A & \overset{f}{\longrightarrow } & A%
+\end{array}%
+\end{equation*}
+
+%TCIMACRO{%
+%\TeXButton{E Figure}{\caption{CAPTION}\label{fig:commdiag}
+%\end{figure}}}%
+%BeginExpansion
+\caption{CAPTION}\label{fig:commdiag}
+\end{figure}%
+%EndExpansion
+
+\bigskip
+
+See Figure~\ref{fig:commdiag} on page \pageref{fig:commdiag} in chapter \ref%
+{ch:new}.

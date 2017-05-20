@@ -1,0 +1,117 @@
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LaTeXparent=0,0,Master.tex}
+                      
+
+\pagenumbering{roman}%
+%TCIMACRO{\TeXButton{Start at page 0}{\addtocounter{page}{-1}}}%
+%BeginExpansion
+\addtocounter{page}{-1}%
+%EndExpansion
+
+\begin{comment}
+To edit the title page, double click on the grey Title\ Page box below.
+\end{comment}
+
+%TCIMACRO{%
+%\TeXButton{Title Page}{\thesistitle
+%{Meta-thesis for Scientific Word:\\How to Use \LaTeX
+%\ to Typeset Your MUN Thesis}{Theodore S.~Norvell}{Master of Engineering (Computer Engineering)}{Faculty of Engineering and Applied Science}{December 2012}}}%
+%BeginExpansion
+\thesistitle
+{Meta-thesis for Scientific Word:\\How to Use \LaTeX
+\ to Typeset Your MUN Thesis}{Theodore S.~Norvell}{Master of Engineering (Computer Engineering)}{Faculty of Engineering and Applied Science}{December 2012}%
+%EndExpansion
+
+\newpage\renewcommand{\baselinestretch}{\double}%
+\addcontentsline{toc}{chapter}{Abstract}
+
+\begin{center}
+\textbf{\large Abstract}
+\end{center}
+
+This document provides information on how to write your thesis using the %
+\LaTeX\ document preparation system. You can use the files used to generate
+this paper as a template for your own thesis.
+
+You should put your real abstract here, of course.
+
+\newpage\addcontentsline{toc}{chapter}{Acknowledgements}
+
+\begin{center}
+\textbf{\large Acknowledgements}
+\end{center}
+
+Based on Meta-Thesis by Donald Craig. Philip Viton helped with the listings
+package. Of course thanks are due to everyone at MacKichen software, Donald
+Knuth, Leslie Lamport, and the many other developers who have made this all
+possible.
+
+\renewcommand{\baselinestretch}{\single}
+
+%TCIMACRO{\TeXButton{Table of Contents}{\tableofcontents}}%
+%BeginExpansion
+\tableofcontents%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{List of Tables}{\addcontentsline{toc}{chapter}{List of Tables}
+%\listof{table}{List of Tables}}}%
+%BeginExpansion
+\addcontentsline{toc}{chapter}{List of Tables}
+\listof{table}{List of Tables}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{List of Figures}{\addcontentsline{toc}{chapter}{List of Figures}
+%\listof{figure}{List of Figures}}}%
+%BeginExpansion
+\addcontentsline{toc}{chapter}{List of Figures}
+\listof{figure}{List of Figures}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{List of Listings}{\addcontentsline{toc}{chapter}{List of Listings}
+%\lstlistoflistings}}%
+%BeginExpansion
+\addcontentsline{toc}{chapter}{List of Listings}
+\lstlistoflistings%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{List of Algorithms}{\addcontentsline{toc}{chapter}{List of Algorithms}
+%\listof{algorithm}{List of Algorithms}}}%
+%BeginExpansion
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listof{algorithm}{List of Algorithms}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{List of Abbreviations}{\addcontentsline{toc}{chapter}{List of Abbreviations}
+%\chapter*{List of Abbreviations}}}%
+%BeginExpansion
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\chapter*{List of Abbreviations}%
+%EndExpansion
+\begin{tabular}[t]{lll}
+GNU & \qquad \qquad & GNU's not UNIX \\ 
+LOA &  & List of Abbreviations \\ 
+TLA &  & Three Letter Acronym \\ 
+&  &  \\ 
+&  & 
+\end{tabular}
+
+%TCIMACRO{%
+%\TeXButton{List of Notations}{\addcontentsline{toc}{chapter}{List of Notations}
+%\chapter*{List of Notations}}}%
+%BeginExpansion
+\addcontentsline{toc}{chapter}{List of Notations}
+\chapter*{List of Notations}%
+%EndExpansion
+\begin{tabular}[t]{lll}
+$f:a\rightarrow b$ & \qquad \qquad & $f$ is an arrow from $a$ to $b$ \\ 
+$\overrightarrow{f}$ &  & The target of $f$ \\ 
+$\overleftarrow{f}$ &  & The source of $f$ \\ 
+$\limfunc{id}(a)$ &  & The identity arrow of $f$ \\ 
+$f;g$ &  & The composition of $f$ and $g$ where $\overrightarrow{f}=%
+\overleftarrow{g}$%
+\end{tabular}

@@ -1,0 +1,332 @@
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LaTeXparent=0,0,Master.tex}
+                      
+%TCIDATA{ChildDefaults=chapter:1,page:1}
+
+
+\chapter{Tags and environments\label{chap:tags}}
+
+In order to use tags, the Tag toolbar should be showing (View \TEXTsymbol{>}%
+\TEXTsymbol{>}\ Toolbars). This toolbar has 3 \textquotedblleft
+drop-down\textquotedblright\ menus.
+
+\begin{itemize}
+\item Item Tags (Alt-1)
+
+\item Section/Body Tags (Alt-2)
+
+\item Text\ Tags\ (Alt-3)
+\end{itemize}
+
+\section{Sections and Chapters\label{sec:sections}}
+
+Chapters:\ No function key is assigned to chapter heads. Use the
+Section/Body Tag drop-down (Alt-2).
+
+F11 gives a new section head
+
+\subsection{Subsections}
+
+F12 gives a new subsection
+
+\subsubsection{Subsubsections}
+
+Shift-F11 gives a new subsubsection
+
+\paragraph{Subsubsubsections}
+
+Shift-F12 gives a new sub$^{3}$section (aka a paragraph). These are not
+numbered and do not appear in the Table of\ Contents.
+
+\section{Body tags}
+
+The Section/Body tag drop-down (Alt-2) is used for environments that
+typically do not nest and section headings. We've seen section headings
+above. Some of the other environments available via Section/Body tags are
+
+F3 Body text. This is the default kind of paragraph
+
+\begin{center}
+Centred. It was our yesterdayes resolution, and agreement, that we should to
+day discourse the most distinctly, and particularly we could possible, of
+the natural reasons, and their efficacy that have been hitherto alledged on
+the one or other part, by the maintainers of the Positions, Aristotelian,
+and Ptolomaique; and by the followers of the Copernican Systeme:
+\end{center}
+
+\begin{flushleft}
+Flush left. And because Copernicus placing the Earth among the moveable
+Bodies of Heaven, comes to constitute a Globe for the same like to a Planet;
+it would be good that we began our disputation with the examination of what,
+and how great the energy of the Peripateticks arguments is, when they
+demonstrate, that this Hypothesis is impossible:
+\end{flushleft}
+
+\begin{flushright}
+Flush right. Since that it is necessary to introduce in Nature, substances
+different betwixt themselves, that is, the C\oe lestial, and Elementathat
+impassible and immortal, this alterable and corruptible. Which argument
+Aristotle handleth in his book De C\oe lo, insinuating it first, by some
+discourses dependent on certain general assumptions, and afterwards
+confirming it with experiments and perticular demonstrations: following the
+same method, I will propound, and freely speak my judgement, submitting my
+self to your censure, and particularly to Simplicius, a Stout Champion and
+contender for the Aristotelian Doctrine.
+\end{flushright}
+
+\begin{quotation}
+Long quotation. And the first Step of the Peripatetick arguments is that,
+where Aristotle proveth the integrity and perfection of the World, telling
+us, that it is not a simple line, nor a bare superficies, but a body adorned
+with Longitude, Latitude, and Profundity.
+\end{quotation}
+
+\begin{quote}
+Short Quote.
+\end{quote}
+
+Body and section tags should be applied only to top-level paragraphs.
+Furthermore Item tags can not be used within Body tags. You can try to make
+a list of quotations or a quotation that contains a list, but the
+straight-forward approach is not likely to succeed. (These things can be
+done with LaTeX; the limitation is with Scientific Word and Scientific
+Workplace.)
+
+\section{Item tags and environments that nest}
+
+The \textquotedblleft Item Tag\textquotedblright\ drop-down (Alt-1) lists
+all tags that nest. Some of these generate list-like environments in LaTeX.
+
+\begin{itemize}
+\item Bullet lists F8
+
+\begin{enumerate}
+\item Numbered lists F7
+
+\begin{description}
+\item[Description lists:] Use \textquotedblleft Description List
+Item\textquotedblright\ on the Item Tag drop down.
+
+\item[Depth:] You can nest item tags to a depth of 4, but no more
+
+\begin{itemize}
+\item This list item is at depth 4. LaTeX supports deeper nesting, but
+Scientific Word and WorkPlace do not.
+\end{itemize}
+\end{description}
+
+\item See also the \textquotedblleft code\textquotedblright\ and
+\textquotedblleft indent\textquotedblright\ tags discussed in the next
+chapter.
+\end{enumerate}
+
+\item F2 to step out a level.
+
+\item 
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+The \textquotedblleft singlespaced\textquotedblright\ environment is not
+associated with a function key or tag. You can use TeX fields (Insert\ 
+\TEXTsymbol{>}\TEXTsymbol{>}\ Typeset Object \TEXTsymbol{>}\TEXTsymbol{>}
+TeX Field) to insert the required LaTeX magic. You can also use the
+\textquotedblleft singlespaced\textquotedblright\ fragment.%
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+\end{itemize}
+
+\section{Theorems and proofs}
+
+Theorem-like environments and proofs (perhaps surprisingly) nest. Use the
+Item Tag drop-down (Alt-1) Be sure to use F2 (Remove Item Tag) after the end
+of each.
+
+\begin{axiom}[The axiom of equality]
+All animals are equal.
+\end{axiom}
+
+\begin{claim}
+That some animals are more equal than others.
+\end{claim}
+
+\begin{conclusion}
+Whatever goes upon two legs is an enemy.
+\end{conclusion}
+
+\begin{condition}
+No animal shall drink alcohol.
+\end{condition}
+
+\begin{corollary}
+Whatever goes upon four legs, or has wings, is a friend.
+\end{corollary}
+
+\begin{conjecture}
+All men are enemies. All animals are comrades.
+\end{conjecture}
+
+\begin{criterion}
+No animal shall kill any other animal.
+\end{criterion}
+
+\begin{definition}[Insanity]
+Doing the same thing over and over again while expecting different results.
+\end{definition}
+
+\begin{example}
+Example is not the main thing in influencing others. It is the only thing.
+\end{example}
+
+\begin{exercise}
+Find all errors in Cantor's diagonal proof that the continuum is larger than 
+$\aleph _{0}$.
+\end{exercise}
+
+\begin{lemma}
+What is yellow and equivalent to the axiom of choice. ... Zorn's Lemon.
+\end{lemma}
+
+\begin{notation}
+We use $\left\langle E\right\rangle $ to represent that total function $f$
+in $\Sigma \times \Sigma \rightarrow \mathbb{B}$ such that $f(\sigma ,\sigma
+^{\prime })$ is equal to the value of the expression obtained by replacing,
+in the boolean expression $E$, each unprimed identifier $i$ with $\sigma .i$
+and each primed identifier $i^{\prime }$ with $\sigma ^{\prime }.i$.
+\end{notation}
+
+\begin{problem}
+Show that $P=NP$ or that $P\neq NP$.
+\end{problem}
+
+\begin{proposition}
+No animal shall wear clothes.
+\end{proposition}
+
+\begin{solution}
+That which is not in the problem set is in the solution set.
+\end{solution}
+
+\begin{summary}
+No question now, what had happened to the faces of the pigs. The creatures
+outside looked from pig to man, and from man to pig, and from pig to man
+again; but already it was impossible to say which was which.
+\end{summary}
+
+\begin{theorem}[The Curry/L\"{o}b paradox]
+\label{thm:santa}I am Santa Claus.
+\end{theorem}
+
+\begin{remark}
+Truth is an ill-defined concept.
+\end{remark}
+
+\begin{proof}
+(Theorem \ref{thm:santa}.)
+
+(a)\ Let $S$ be the statement \textquotedblleft If $S$ is true, then I am
+Santa Claus\textquotedblright .
+
+(b)\ Assume, for the moment that $S$ is true.
+
+\begin{itemize}
+\item Since $S$ is true and $S$ is the statement \textquotedblleft If $S$ is
+true, then I am Santa Claus\textquotedblright , the statement
+\textquotedblleft If $S$ is true, then I am Santa Claus\textquotedblright\
+is true.
+
+\item Therefore, if $S$ is true, then I am Santa Claus.
+
+\item As we are assuming $S$ is true, I\ am (under that assumption)\ Santa
+Claus.
+\end{itemize}
+
+(c) Since in (b), assuming $S$ to be true lead to the conclusion that I am
+Santa Claus, we can see that \textquotedblleft If $S$ is true, then I am
+Santa Claus\textquotedblright\ is true.
+
+(d)\ By (c)\ and (a), $S$ is true.
+
+(e)\ From (c), if $S$ is true, then I am Santa Claus.
+
+(f)\ From (d) and (e), by modus ponens, I am Santa Claus.
+\end{proof}
+
+In Scientific Word and WorkPlace you can double click the tagged paragraph's
+leader (i.e. the word(s) or symbols leading the paragraph) to enter an
+optional \textquotedblleft custom label\textquotedblright ,\ as I\ did with
+the Axiom, Definition, and Theorem above. This works for theorem-like
+environments and description-list items. It does not work for proofs.
+
+The numbering system that I have chosen is to number theorems sequentially
+within each chapter and all other theorem-like entities as if they were also
+theorems. You can use another numbering system if you want; to do so, edit
+the preamble (Typeset \TEXTsymbol{>}\TEXTsymbol{>}\ Preamble) of the master
+document.
+
+\section{Fonts and sizes}
+
+The Text Tag drop-down (Alt-3) is used for tags that operate at the
+character level rather than the paragraph level.
+
+\begin{itemize}
+\item F4 to return to the default.
+
+\item \textrm{Shift-F4 for roman}
+
+\item \textbf{F5 for bold}
+
+\item \textsf{Shift-F5 for sans-serif}
+
+\item \emph{F6 for emphasized. Emphasized (by default) alternates between
+italic and upright as it nests}
+
+\item \textit{Shift-F6 for italic. Italic is always italic. Use italic for
+multi-letter names in math mode.}
+
+\item \texttt{F9 for typewriter}
+
+\item $\mathcal{SHIFT}$-$\mathcal{F}9~\mathcal{FOR\ CALIGRAPHIC}$ Only
+capitals and numerals. Best saved for math.
+
+\item $\mathfrak{Frackur}$ Best saved for math
+
+\item $\mathbb{BLACKBOARD\ BOLD}$ Only capitals. Use only for constant sets: 
+$\mathbb{C}$ for the complex numbers, $\mathbb{R}$ for the real numbers, $%
+\mathbb{Z}$ for the integers, $\mathbb{N}$ for the natural numbers, $\mathbb{%
+B}$ for the Booleans.
+
+\item \textsc{Small Capitals}.
+
+\item Most font size changes needed are done automatically. You should never
+or only very rarely use {\Huge size} {\scriptsize changing} {\LARGE text} 
+{\tiny tags}.
+
+\item \emph{\textbf{Combining text tags is possible, but rather tricky,
+unless one tag is strictly within the other. Start by typing three letters,
+say \textquotedblleft xyz\textquotedblright ; make all three emphasized.
+Then make the y bold. Select the y and start typing. Finally delete the x
+and the z.}}
+\end{itemize}
+
+$\mathit{\Gamma }\rho \varepsilon \varepsilon \kappa $ $\lambda \varepsilon
+\tau \tau \varepsilon \rho \sigma $. Greek letters are available on the
+Symbol Panels toolbar (View \TEXTsymbol{>}\TEXTsymbol{>}\ Toolbars...) and
+from the keyboard. For example \textquotedblleft Control-g
+p\textquotedblright\ gives $\pi $ and Control-g P gives $\Pi $. Missing
+capital greek letters can be replaced by their Roman equivalents: $\mathrm{AB%
+}\Gamma \Delta $. Likewise lowercase omicron is not available, but you can
+use an italic oh, $o$. Some letters come in more than one variation:\ $%
+\epsilon $ and $\varepsilon $, $\theta $ and $\vartheta $, $\rho $ and $%
+\varrho $, $\pi $ and $\varpi $, $\phi $ and $\varphi $, $\sigma $ and $%
+\varsigma $. I prefer $\varepsilon $ to $\epsilon $, as the latter is often
+confused with $\in .$ (By the way, please do not use $\epsilon $ in place of 
+$\in $.) Otherwise, I prefer $\theta $, $\rho $, $\pi $, and $\sigma $,
+these being the more standard variants. Greek is not a text tag, so no
+tricks are needed to combine Greek letters with text tags to make, for
+example, bold Greek $\mathbf{AB\Gamma \Delta \alpha \beta \gamma \delta }$
+or italic Greek $\mathit{AB\Gamma \Delta \alpha \beta \gamma \delta }$.
+However most\ other text tags do not work with Greek letters; in particular,
+there is no easy way to make upright lower-case greek letters.

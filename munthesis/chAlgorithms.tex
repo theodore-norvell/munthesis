@@ -1,0 +1,459 @@
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LaTeXparent=0,0,Master.tex}
+                      
+%TCIDATA{ChildDefaults=chapter:1,page:1}
+
+
+\chapter{Algorithms and listings}
+
+\section{The code tag/environment}
+
+For algorithms I use my own environment called \textquotedblleft
+code\textquotedblright\ (Shift-F8). Before you use this you have to install
+my code.sty file somewhere latex can find it. Here is an example
+
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+\begin{code}
+\textbf{let} $x\mid x\in\mathbb{N}\cdot$
+
+\textbf{while} $x>0$ do
+
+\begin{indent}
+\item $x:=x-1$
+\end{indent}
+\end{code}
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+
+Indentation is done with the indent tag (Shift-F7). To unindent use F2. Also
+use F2 to get out of code. Please only use the indentation tag (Shift-F7)
+inside of the code tag (Shift-F8). Unfortunately SWP limits the number of
+indentations levels to 4 --- counting not indented at all. To get more
+indentation, I\ start putting in 2-Em spaces (Insert \TEXTsymbol{>}%
+\TEXTsymbol{>}\ Spacing \TEXTsymbol{>}\TEXTsymbol{>}\ Horizontal Space...).
+Even the first line can be indented.
+
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+\begin{code}
+\begin{indent}
+\item $\left\langle P\right\rangle $
+\end{indent}
+
+$\sqsubseteq $
+
+\begin{indent}
+\item \textbf{if} $B$ \textbf{then}
+
+\begin{indent}
+\item $\left\langle B\Rightarrow P\right\rangle $
+\end{indent}
+
+\item \textbf{else}
+
+\begin{indent}
+\item $\left\langle \lnot B\Rightarrow P\right\rangle $
+\end{indent}
+\end{indent}
+\end{code}
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+
+The fragment \textquotedblleft sscode\textquotedblright\ inserts a single
+spaced code environment.
+
+Make sure that all code belonging to a single example is in one code
+environment. You should only see one leader (i.e., one green box containing
+the word \textquotedblleft code\textquotedblright ). If there are several
+leaders, delete all but the first using the back-space key. This often
+needed after backing out of an indented section using F2. Figure~\ref%
+{fig:extra-code} shows what can happen. If you are looking at this document
+with SW or SWP, you will see the second leader in front of the word
+\textquotedblleft assert\textquotedblright . If you are looking at the
+typeset document, you will see extra space caused by having two code
+environments where there should be one. After using F2 to get out of the
+indent environment I\ should have used the backspace key to eliminate the
+second green leader. You might wonder whether a similar trick is needed when
+you use F2 to leave a nested indent environment; the answer is `no'.
+
+%TCIMACRO{\TeXButton{B Figure}{\begin{figure}[tb]}}%
+%BeginExpansion
+\begin{figure}[tb]%
+%EndExpansion
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+\begin{code}
+\textbf{assume} $t<\infty $
+
+\textbf{var} $i:\in \mathbb{N}$
+
+\textbf{while} $i>0$ \textbf{do}
+
+\begin{indent}
+\item $i:=i-1$
+\end{indent}
+\end{code}
+
+\begin{code}
+\textbf{assert} $t<\infty $
+\end{code}
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+%TCIMACRO{%
+%\TeXButton{E Figure}{\caption{Incorrect spacing casued by an extra code environment}\label{fig:extra-code}
+%\end{figure}}}%
+%BeginExpansion
+\caption{Incorrect spacing casued by an extra code environment}\label{fig:extra-code}
+\end{figure}%
+%EndExpansion
+
+The fragment \textquotedblleft parcode\textquotedblright\ inserts code
+consisting of two parallel threads. (It is not singlespaced, but you can use
+the \textquotedblleft singlespaced\textquotedblright\ fragment to make it
+so.) You may need to fiddle with the widths of the minipages.\ See Algorithm~%
+\ref{alg:prod-cons} for an example.
+
+%TCIMACRO{\TeXButton{B Algorithm}{\begin{algorithm}}}%
+%BeginExpansion
+\begin{algorithm}%
+%EndExpansion
+%TCIMACRO{\TeXButton{B centering}{\begin{centering}}}%
+%BeginExpansion
+\begin{centering}%
+%EndExpansion
+%TCIMACRO{\TeXButton{B tabular}{\begin{tabular}{r||l}}}%
+%BeginExpansion
+\begin{tabular}{r||l}%
+%EndExpansion
+%TCIMACRO{\TeXButton{B minipage}{\begin{minipage}[t]{2.25in}}}%
+%BeginExpansion
+\begin{minipage}[t]{2.25in}%
+%EndExpansion
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+\begin{code}
+\textbf{while} $\mathit{true}$ \textbf{do}
+
+\begin{indent}
+\item compute next value
+
+\item $P(e)\qquad $
+
+\item fill the buffer
+
+\item $V(f)$
+\end{indent}
+\end{code}
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+%TCIMACRO{\TeXButton{E minipage}{\end{minipage}}}%
+%BeginExpansion
+\end{minipage}%
+%EndExpansion
+%TCIMACRO{\TeXButton{newcolumn}{&}}%
+%BeginExpansion
+&%
+%EndExpansion
+%TCIMACRO{\TeXButton{B minipage}{\begin{minipage}[t]{2.25in}}}%
+%BeginExpansion
+\begin{minipage}[t]{2.25in}%
+%EndExpansion
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+\begin{code}
+\textbf{while} $\mathit{true}$ \textbf{do}
+
+\begin{indent}
+\item $P(f)$
+
+\item empty the buffer
+
+\item $V(e)$
+
+\item use the value
+\end{indent}
+\end{code}
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+%TCIMACRO{\TeXButton{E minipage}{\end{minipage}}}%
+%BeginExpansion
+\end{minipage}%
+%EndExpansion
+%TCIMACRO{\TeXButton{E tabular}{\end{tabular}}}%
+%BeginExpansion
+\end{tabular}%
+%EndExpansion
+%TCIMACRO{\TeXButton{E centering}{\end{centering}}}%
+%BeginExpansion
+\end{centering}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{Caption}{\caption{A producer and a consumer}}}%
+%BeginExpansion
+\caption{A producer and a consumer}%
+%EndExpansion
+\label{alg:prod-cons}%
+%TCIMACRO{\TeXButton{E Algorithm}{\end{algorithm}}}%
+%BeginExpansion
+\end{algorithm}%
+%EndExpansion
+
+Sometimes you want algorithms to float like figures and tables. You can use
+the \textquotedblleft figure\textquotedblright\ fragment as in Figure~\ref%
+{fig:extra-code}. You can also use the \textquotedblleft
+algorithm\textquotedblright\ fragment. Use Alt-4 and select
+\textquotedblleft algorithm\textquotedblright . Edit the caption and marker;
+add your code. Algorithms inserted using this fragment are singlespaced.
+Algorithm~\ref{alg:subsetcons} is an example.
+
+%TCIMACRO{\TeXButton{B Algorithm}{\begin{algorithm}\begin{singlespaced}}}%
+%BeginExpansion
+\begin{algorithm}\begin{singlespaced}%
+%EndExpansion
+
+\begin{code}
+$\dot{q}_{\mathrm{start}}:=\epsilon$-closure$(q_{\mathrm{start}})\;;$
+
+\textbf{var} $W:=\{\dot{q}_{\mathrm{start}}\}\cdot$
+
+$\dot{Q}:=\emptyset\;;$
+
+$\dot{T}:=\emptyset\;;$
+
+\textbf{while} $W\neq\emptyset$ \textbf{do }$\mathbf{(}$
+
+\begin{indent}
+\item \textbf{let} $\dot{q}\mid\dot{q}\in W\cdot$
+
+\item $W:=W-\{\dot{q}\}\;;$
+
+\item $\dot{Q}:=\dot{Q}\cup\{\dot{q}\}\;;$
+
+\item \textbf{for} \textbf{each} $a\in S\;$\textbf{do}$\;($
+
+\begin{indent}
+\item \textbf{let} $\dot{r}=\epsilon$-closure$(\delta(\dot{q},a))\cdot$
+
+\item \textbf{if} $\dot{r}\neq\emptyset$ \textbf{then }$($
+
+\begin{indent}
+\item $\dot{T}:=\dot{T}\cup\{(\dot{q},$\textsf{\textquotedblleft}$a$\textsf{%
+\textquotedblright}$,\dot{r})\}\;;$
+
+\item \textbf{if} $\dot{r}\not \in \dot{Q}$ \textbf{then} $W:=W\cup\{\dot {r}%
+\}$ \textbf{else skip}$\;)$
+\end{indent}
+
+\item \textbf{else skip} $)\;)$
+\end{indent}
+\end{indent}
+
+$\dot{F}:=\{\dot{q}\in\dot{Q}\mid\dot{q}\cap F\neq\emptyset\}$
+\end{code}
+
+%TCIMACRO{\TeXButton{Caption}{\caption{The subset construction algorithm}}}%
+%BeginExpansion
+\caption{The subset construction algorithm}%
+%EndExpansion
+\label{alg:subsetcons}%
+%TCIMACRO{\TeXButton{E Algorithm}{\end{singlespaced}\end{algorithm}}}%
+%BeginExpansion
+\end{singlespaced}\end{algorithm}%
+%EndExpansion
+
+\section{Listings}
+
+Listings are lines of source code. If you want to include source code in
+your thesis, you will want listings
+
+\subsection{If you do want to use listings\label{sec:doWantListings}}
+
+You must install the listings package somewhere latex can find it. You
+should read the documentation: listings.pdf.
+
+You will also want to install the fragments mentioned below.
+
+You can edit the default settings by editing the \TEXTsymbol{\backslash}%
+lstset command in the preamble (Typeset \TEXTsymbol{>}\TEXTsymbol{>}\
+Preamble). For example, if all (or most of) the listing in your thesis are
+in Java, add \textquotedblleft language=Java\textquotedblright\ to the list
+of key/value pairs in the \TEXTsymbol{\backslash}lstset command in the
+preamble of the Master document.
+
+\subsection{In-situ listings}
+
+In-situ listings are fragments of code that are placed right in your TeX
+file. Typically you copy text from a source file and paste it in to
+Scientific Workplace.
+
+Here is a listing that appears \textquotedblleft displayed\textquotedblright
+, i.e. as a paragraph in your document.
+
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{In-situ-listing}{\begin{lstlisting}[language=Pascal]
+%program Hello ;
+%begin
+%   write("Hello");
+%end.
+%\end{lstlisting}}}%
+%BeginExpansion
+\begin{lstlisting}[language=Pascal]
+program Hello ;
+begin
+   write("Hello");
+end.
+\end{lstlisting}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+
+You can also have listings as floating elements, like figures and tables.
+These have captions and labels, which means you can refer to them using
+cross-references. See Listing \ref{lst:inSitu} for an example.
+
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{Floating-in-situ-listing}{\begin{lstlisting}[float=tb,language=Haskell,caption={This listing is {\it in situ}}, label=lst:inSitu]
+%data Tree a = Empty | Branch a (Tree a) (Tree a)
+%
+%Flatten t = FlattenAndCat t []
+%FlattenAndCat Empty xs = xs
+%FlattenAndCat (Branch x left right ) ys
+%   =  FlattenAndCat left (x :: FlattenAndCat right ys)
+%
+%five = let 2+2 = 5 in 2+2 
+%
+%\end{lstlisting}}}%
+%BeginExpansion
+\begin{lstlisting}[float=tb,language=Haskell,caption={This listing is {\it in situ}}, label=lst:inSitu]
+data Tree a = Empty | Branch a (Tree a) (Tree a)
+
+Flatten t = FlattenAndCat t []
+FlattenAndCat Empty xs = xs
+FlattenAndCat (Branch x left right ) ys
+   =  FlattenAndCat left (x :: FlattenAndCat right ys)
+
+five = let 2+2 = 5 in 2+2 
+
+\end{lstlisting}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+
+Use fragment \textquotedblleft listing (nonfloating)\textquotedblright\ for
+nonfloating listings and \textquotedblleft listing
+(floating)\textquotedblright\ for floating listings.
+
+\subsection{Turning files into listings}
+
+The listings package allows LaTeX to read in a source file and turn it into
+a nicely typeset listing.
+
+An example can be found in Listing \ref{lst:fromFileExample}.
+
+%TCIMACRO{\TeXButton{B SingleSpaced}{\begin{singlespaced}}}%
+%BeginExpansion
+\begin{singlespaced}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{Include of CommonParserHelper}{\lstinputlisting
+%[float=tb,language=Java,caption={This listing comes from a file}, label=lst:fromFileExample,firstline=18]{code/CommonParserHelper.java}}}%
+%BeginExpansion
+\lstinputlisting
+[float=tb,language=Java,caption={This listing comes from a file}, label=lst:fromFileExample,firstline=18]{code/CommonParserHelper.java}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{E SingleSpaced}{\end{singlespaced}}}%
+%BeginExpansion
+\end{singlespaced}%
+%EndExpansion
+
+Use the fragment \textquotedblleft listing (from file)\textquotedblright\
+and edit the contents of the grey box that gets inserted.
+
+By default these listings will float. If you don't want that, just remove
+the \textquotedblleft float=tb\textquotedblright\ key/value pair. Also it is
+best to remove the caption and label for nonfloating listings.
+
+Note that floating listings can not exceed a page, which in a MUN\ thesis is
+about 40 lines single spaced. In the example, I started this listing at line
+18 of the file (firstline=18) so as to get the float to fit on a page. (The
+first 17 lines are comments; and who wants to read those?)
+
+\subsection{In-line listings}
+
+In-line listings are short pieces of text that can be included in the normal
+flow of a paragraph. Use the fragment \textquotedblleft listing
+(inline)\textquotedblright . Here is an example:\ 
+%TCIMACRO{%
+%\TeXButton{Inline listing}{\lstinline[prebreak={},postbreak={}]@thesis.MagicAlgorithm.runSpell( i );@}}%
+%BeginExpansion
+\lstinline[prebreak={},postbreak={}]@thesis.MagicAlgorithm.runSpell( i );@%
+%EndExpansion
+
+\subsection{Typeset the master document}
+
+If you use inputted file listings, only typeset the \textquotedblleft
+Master\textquotedblright\ document. Typesetting a chapter on its own won't
+work. The reason is that SW/SWP usually will move your document to a
+temporary location for typesetting. But as it doesn't move your code files,
+they can't be found from the temporary location. An exception is when SW/SWP
+typesets a \textquotedblleft Master\textquotedblright\ document; then it
+doesn't use a temporary location and sanity is restored.
+
+\subsection{If you don't want to use listings}
+
+With Typeset\ \TEXTsymbol{>}\TEXTsymbol{>}\ Options and Packages... remove
+\textquotedblleft listings\textquotedblright\ from the package list. Then,
+in the preamble (Typeset \TEXTsymbol{>}\TEXTsymbol{>}\ Preamble),\ remove
+all commands that have to do with listings. You should also remove the List
+of Listings from the frontMatter.tex document. This will improve compile
+times and save you from having to install the \textquotedblleft
+listings\textquotedblright\ package.

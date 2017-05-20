@@ -1,0 +1,132 @@
+%%% Original version by Donald Craig.
+%%% Modified by Theodore Norvell 2009 November 25
+
+
+\documentclass[12pt]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{makeidx}
+\usepackage{eurosym}
+\usepackage{mun-thesis}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{code}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage{thesis.zeros}
+\usepackage{accents}
+\usepackage{named.cite}
+\usepackage{hyperref}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{Created=Thursday, October 21, 2010 17:39:22}
+%TCIDATA{LastRevised=Thursday, December 17, 2015 13:41:42}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Theses\MUN Thesis">}
+%TCIDATA{CSTFile=mun-thesis.cst}
+
+\renewcommand{\theequation}{\thechapter.\fromz{equation}}
+\lstset{ 
+        columns=fullflexible,
+        tabsize=4,showtabs=false,
+        showspaces=false,
+        showstringspaces=true,
+        numbers=left, stepnumber=5, firstnumber=0,
+         captionpos=b,
+         breaklines=true,
+         postbreak={\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow}}},
+         prebreak={\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}},
+         breakautoindent=false,
+         breakindent=0pt,
+         keywordstyle=\bfseries,
+         identifierstyle=\sffamily,
+         commentstyle=\itshape,
+         stringstyle=\ttfamily}
+\lstnewenvironment{lstfloatinglisting}{\lstset{float=tb}}{}
+\renewcommand{\lstlistlistingname}{List of Listings}
+\AtBeginDocument{\renewcommand\thelstlisting{\thechapter.\fromz{lstlisting}}}
+\floatstyle{plain}
+\floatname{algorithm}{Algorithm}
+\newfloat{algorithm}{tb}{loa}[chapter]
+\renewcommand{\thealgorithm}{\thechapter.\fromz{algorithm}}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\input{tcilatex}
+\begin{document}
+
+
+%TCIMACRO{\QSubDoc{Include frontMatter}{\input{frontMatter.tex}}}%
+%BeginExpansion
+\input{frontMatter.tex}%
+%EndExpansion
+
+\begin{comment}
+Remember to save all subdocuments before typesetting.
+\end{comment}
+
+\renewcommand{\baselinestretch}{\double}
+
+%TCIMACRO{\QSubDoc{Include chIntro}{\input{chIntro.tex}}}%
+%BeginExpansion
+\input{chIntro.tex}%
+%EndExpansion
+
+\begin{comment}
+Add more chapters here:\ Use Insert \TEXTsymbol{>}\TEXTsymbol{>}\ Typeset
+Object \TEXTsymbol{>}\TEXTsymbol{>} Subdocument ...
+\end{comment}
+
+%TCIMACRO{\QSubDoc{Include chTags}{\input{chTags.tex}}}%
+%BeginExpansion
+\input{chTags.tex}%
+%EndExpansion
+
+%TCIMACRO{\QSubDoc{Include chAlgorithms}{\input{chAlgorithms.tex}}}%
+%BeginExpansion
+\input{chAlgorithms.tex}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{Add References to Contents}{\clearpage
+%\addcontentsline{toc}{chapter}{References}}}%
+%BeginExpansion
+\clearpage
+\addcontentsline{toc}{chapter}{References}%
+%EndExpansion
+
+\bibliographystyle{named}
+\bibliography{acompat,thesis}
+
+%TCIMACRO{\TeXButton{Start of Appendices}{\appendix}}%
+%BeginExpansion
+\appendix%
+%EndExpansion
+
+%TCIMACRO{\QSubDoc{Include apAppendices}{\input{apAppendices.tex}}}%
+%BeginExpansion
+\input{apAppendices.tex}%
+%EndExpansion
+
+\end{document}
