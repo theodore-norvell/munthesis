@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Theo's Thesis Template</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<h1>Theo's Scientific Word Thesis Template for MUN</h1>
+<div style="background-color:#CCCCCC">
+  <p>Updated 2015 Dec 17</p>
+  <ul>
+    <li>Better support for PDFLaTeX</li>
+  </ul>
+<p>Updated 2014 June 6</p>
+<ul>
+  <li>added fragments for in-situ listings</li>
+</ul>
+<p>Updated 2011 Sept 3</p>
+<ul>
+  <li>added fragments figure and ssfigure </li>
+</ul>
+<p>Updated 2011 Aug 27 (Support for theorems and such) </p>
+<ul>
+  <li>mun-thesis.cst </li>
+  <li>mun-thesis.sty</li>
+  <li>thesis.zeros.sty</li>
+  <li>munthesis.zip -- you will need the new preamble from Master.tex</li>
+</ul>
+</div>
+
+<p>This template consists of several files and directories. Many files have to go in special places. In the following</p>
+<dl><dt>&lang;SW&rang;</dt>
+    <dd>is your instalation folder. For me it is &quot;C:\progfiles\swp55&quot;</dd>
+    <dt>&lang;HOME&rang;</dt>
+    <dd> is your home directory. For me it is &quot;C:\Users\theo\Documents&quot;.</dd>
+</dl>
+<p>(0). Download style files etc</p>
+<ul>
+  <li><a href="mun-thesis.cst">mun-thesis.cst</a> goes in &lang;SW&rang;\styles\report </li>
+  <li>The following all go in a new directory &lang;SW&rang;\TCITeX\TeX\LaTeX\munthesis    <ul>
+      <li><a href="mun-thesis.sty">mun-thesis.sty</a></li>
+      <li><a href="named.cite.sty">named.cite.sty</a> </li>
+      <li><a href="code.sty">code.sty</a></li>
+      <li><a href="comment.sty">comment.sty</a></li>
+      <li><a href="thesis.zeros.sty">thesis.zeros.sty</a></li>
+      </ul>
+  </li>
+  <li><a href="thesis.bib">thesis.bib</a> goes in &lang;SW&rang;\TCITeX\BibTeX\bib\munthesis\</li>
+  <li>The following files all go in folder &lang;SW&rang;\Frags\
+    <ul>
+      <li><a href="algorithm.frg">algorithm.frg</a></li>
+      <li><a href="figure.frg">figure.frg</a></li>
+      <li><a href="listing (nonfloating).frg">listing (nonfloating).frg</a></li>
+      <li><a href="listing (floating).frg">listing (floating).frg</a></li>
+      <li><a href="listing%20(from%20file).frg">listing (from file).frg</a></li>
+      <li><a href="listing%20(inline).frg">listing (inline).frg</a></li>
+      <li><a href="parcode.frg">parcode.frg</a></li>
+      <li><a href="shortcite.frg">shortcite.frg</a></li>
+      <li><a href="singlespaced.frg">singlespaced.frg</a></li>
+      <li><a href="sscode.frg">sscode.frg</a></li>
+      <li><a href="ssfigure.frg">ssfigure.frg</a></li>
+      <li><a href="sstable.frg">sstable.frg</a></li>
+    </ul>
+  </li>
+  <li>Unzip directory <a href="listings.zip">listings.zip</a> so that it is under   &lang;SW&rang;\TCITeX\TeX\LaTeX\contrib\</li>
+</ul>
+<p>(1) Next, download file <a href="munthesis.zip">munthesis.zip</a> and unzip it so that munthesis is a subdirectory of   &lang;HOME&rang;.</p>
+<p>(2) With Scientific Word (or Workplace), open Master.tex in  &lang;HOME&rang;\munthesis.</p>
+<ul>
+  <li>Compile (Typeset &gt;&gt; Compile...), check &quot;Generate a bibliography&quot;, and click Ok.</li>
+  <li>Preview (Typeset &gt;&gt; Preview...), click Yes.</li>
+  <li>Read it. </li>
+</ul>
+<p>(3) If you had no problem with step (2), make a copy of  &lang;HOME&rang;\munthesis called  &lang;HOME&rang;\mythesis (or whatever you want to call it). Modify to make your thesis. I suggest you keep  &lang;HOME&rang;\munthesis untouched as documentation and so you can see how I did various things. Add bibliographic references to thesis.bib. (See <a href="http://www.ctan.org/get/biblio/bibtex/contrib/doc/btxdoc.pdf">BibTeXing</a> for documentation.) </p>
+<p>(4) Remember to back up your thesis frequently. A good way to do that is to put the \munthesis directory in a dropbox.com folder.</p>
+</body>
+</html>

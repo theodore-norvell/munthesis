@@ -1,0 +1,47 @@
+%{
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% The code environment %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\code{%
+\bgroup%
+\parsep 0pt%
+\parskip 0pt%
+\parindent -1em%
+\leftskip=2em%
+\def\descriptionlabel##1{\hspace\labelsep \bfseries ##1}%
+\def\description{\list{}{\parsep 0pt \parskip 0pt \itemsep 0pt \topsep 0pt%
+       \parindent 0pt \labelwidth\z@ \itemindent\z@ \leftmargin 2em%
+       \let\makelabel\descriptionlabel}}%
+\let\enddescription\endlist%
+	\par\vspace{2ex}\par}%
+\def\endcode{\par\vspace{2ex}\par\egroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% The indent environment %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\def\indent{\description}
+\def\endindent{\enddescription}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Framed environement %
+%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\frameWidth}
+\newlength{\frameTopExtra}
+\newlength{\frameBottomExtra}
+\newsavebox{\chuck}
+\newenvironment{framed}
+{\setlength{\frameWidth}{\linewidth}%
+ \addtolength{\frameWidth}{-2\fboxsep}%
+ \addtolength{\frameWidth}{-2\fboxrule}%
+ \setlength{\frameTopExtra}{1.0ex}%
+ \setlength{\frameBottomExtra}{0ex}%
+ \setlength{\frameTopExtra}{\baselinestretch \frameTopExtra}%
+ \global\setbox\chuck\vbox\bgroup\hsize\frameWidth \@parboxrestore}%
+{\par\vskip\z@\egroup\shortstack{{}\\[\frameTopExtra]\fbox{\usebox\chuck}%
+\\[\frameBottomExtra]{}}}
+\makeatother
+%}

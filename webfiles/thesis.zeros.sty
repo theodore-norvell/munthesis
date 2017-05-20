@@ -1,0 +1,74 @@
+\newcounter{fromzerotemp}
+
+\newcommand{\fromzero}[1]{\setcounter{fromzerotemp}{\csname c@#1\endcsname}%
+\addtocounter{fromzerotemp}{-1}%
+\noexpand \number \c@fromzerotemp}
+%\def\arabic#1{\expandafter\@arabic\csname c@#1\endcsname}
+\newcommand{\fromz}[1]{\@fromz{\@nameuse{c@#1}}}
+
+\def\@fromz#1{\ifcase#1\or 0\or 1\or 2\or 3\else\@ifromz{#1}\fi}
+\def\@ifromz#1{\ifcase#1\or \or \or \or \or 4\or 5\or 6\or 7\or 8\or 9\or
+   10\or 11\or 12\or 13\or 14\or 15\or 16\or 17\or 18\or 19\or
+   20\or 21\or 22\or 23\or 24\or 25\or 26\or 27\or 28\or 29\or
+   30\or 31\or 32\or 33\or 34\or 35\or 36\or 37\or 38\or 39\or
+   40\or 41\or 42\or 43\or 44\or 45\or 46\or 47\or 48\or 49\or
+   50\or 51\or 52\or 53\or 54\or 55\or 56\or 57\or 58\or 59\or
+   60\or 61\or 62\or 63\or 64\or 65\or 66\or 67\or 68\or 69\or
+   70\or 71\or 72\or 73\or 74\or 75\or 76\or 77\or 78\or 79\or
+   80\or 81\or 82\or 83\or 84\or 85\or 86\or 87\or 88\or 89\or
+   90\or 91\or 92\or 93\or 94\or 95\or 96\or 97\or 98\or 99\orc@ctrerr\fi}
+
+\renewcommand{\theequation}{\fromz{equation}}
+
+\def\@thmcounter#1{\noexpand\fromz{#1}}
+
+\def\@definecounter#1{\expandafter\newcount\csname c@#1\endcsname
+     \setcounter{#1}0 \expandafter\gdef\csname cl@#1\endcsname{}\@addtoreset
+     {#1}{@ckpt}\expandafter\gdef\csname p@#1\endcsname{}\expandafter
+     \gdef\csname the#1\endcsname{\fromzero{#1}}}
+
+\def\labelenumi{\theenumi.}    
+\def\theenumi{\fromz{enumi}}     
+ 
+
+\def\thesection       {\thechapter.\fromz{section}}
+\def\thesubsection    {\thesection.\fromz{subsection}}
+\def\thesubsubsection {\thesubsection .\fromz{subsubsection}}
+\def\theparagraph     {\thesubsubsection.\fromz{paragraph}}
+\def\thesubparagraph  {\theparagraph.\fromz{subparagraph}}
+
+\addtocounter{page}{-1}% Not very good
+\renewcommand{\thefootnote}{\fromzero{footnote}}
+\renewcommand{\thempfootnote}{\fromzero{mpfootnote}}
+
+\def\thechapter       {\fromz{chapter}}
+
+\def\thefigure{\thechapter.\fromz{figure}}
+\def\thetable{\thechapter.\fromz{table}}
+
+\def\thelisting{\thechapter.\fromz{listing}}
+
+% When using the plain.bst or similar styles that number the bibliography,
+% we still have to worry about getting the numbers right in \cite's.  I
+% found the following command will do it.
+%
+%\renewenvironment{thebibliography}[1]
+%     {\chapter*{\bibname}%
+%      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+%      \list{\@biblabel{\fromzero\c@enumiv}}%
+%           {\settowidth\labelwidth{\@biblabel{#1}}%
+%            \leftmargin\labelwidth
+%            \advance\leftmargin\labelsep
+%            \@openbib@code
+%            \usecounter{enumiv}%
+%            \let\p@enumiv\@empty
+%            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+%      \sloppy
+%      \clubpenalty4000
+%      \@clubpenalty \clubpenalty
+%      \widowpenalty4000%
+%      \sfcode`\.\@m}
+%     {\def\@noitemerr
+%       {\@latex@warning{Empty `thebibliography' environment}}%
+%      \endlist}
+

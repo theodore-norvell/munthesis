@@ -1,0 +1,1 @@
+\TeXButton{B SingleSpaced}{\begin{singlespaced}}\TeXButton{E SingleSpaced}{\end{singlespaced}}

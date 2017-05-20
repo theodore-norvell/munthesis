@@ -1,0 +1,21 @@
+% This BibTeX style has support for short (year only) citations.  This
+% is done by having the citations actually look like
+%         \citeauthoryear{author-info}{year}
+% The LaTeX style has to have the following (or similar)
+\def\citeauthoryear#1#2{#1 #2}
+\let\@internalcite\cite
+\def\cite{\def\citeauthoryear##1##2{##1, ##2}\@internalcite}
+%% Call this macro before bibliography and after any
+%% shortcites in the bibliography
+\def\shortcite{\def\citeauthoryear##1##2{##2}\@internalcite}
+\def\@biblabel#1{\def\citeauthoryear##1##2{##1, ##2}[#1]\hfill}
+
+% Put a space after the commas and allow line breaks by taking citations
+% out of hboxes.
+\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \def\@citea{}\@cite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{, }\@ifundefined
+       {b@\@citeb}{{\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+{\csname b@\@citeb\endcsname}}}{#1}}
+

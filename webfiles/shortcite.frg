@@ -1,0 +1,1 @@
+\TeXButton{Short Cite}{\shortcite{YourKeyHere}}

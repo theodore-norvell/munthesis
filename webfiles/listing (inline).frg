@@ -1,0 +1,1 @@
+\TeXButton{Inline listing}{\lstinline[prebreak={},postbreak={}]@YourCodeHere@}
