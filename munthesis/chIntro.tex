@@ -294,12 +294,25 @@ i%
 \right) (k-2-i)^{k}\text{\quad .}  \label{eqn:example}
 \end{equation}
 
-\item When your cursor is at the end of the math display, the tab key will
-toggle whether the display is numbered.
+\item When your insertion point (i.e.~caret) is in a math display, the tab
+key will toggle whether the display is numbered. Double clicking to the left
+or right the display will then bring up a \textquotedblleft display
+properties dialog\textquotedblright\ where the \textquotedblleft
+key\textquotedblright\ (i.e., \textquotedblleft label\textquotedblright )
+can be set. The key is then used in cross references.
+
+\item Multiple line math displays can have separate numbers for each line
+and each number is optional. For example%
+\begin{eqnarray}
+&&\left. f\sqsubseteq g;h\right.   \label{eq:wpreLHS} \\
+&=&  \notag \\
+&&\left. h\backslash f\sqsubseteq g\right.   \label{eq:wpreRHS}
+\end{eqnarray}
 
 \item Opinion:\ Displays should be used when a formula might cause a bad
 line break, when the formula is so tall that it will cause an irregular
-distance between lines of text, or when it needs a number.
+distance between lines of text, when a formula is long, or when it needs a
+number.
 
 \item Opinion: It is good style to only number those displays that need to
 be referred to in the text. I.e., that will be cross referenced.
@@ -314,10 +327,10 @@ I make an exception\ for computer code. For example:\
 \begin{equation*}
 \text{\texttt{rm -r -f tmp}\quad .}
 \end{equation*}%
-If I put a period at the end of that sentence, it turns a command to delete
-one directory into a command that also deletes the current directory. The
-IEEE style guide suggests omitting the period at the end of sentence, but
-not other punctuation.
+If the period at the end of that sentence were ,misunderstood to be part of
+the code, the meaning of the code would change considerably. The IEEE style
+guide suggests omitting the period at the end of sentence, but not other
+punctuation.
 
 \item Pitfall: After a display, be careful to only start a new paragraph if
 you need one.
@@ -328,9 +341,9 @@ default italic font, like this $\sin (first)$. Instead use the \textit{italic%
 slightly different fonts for \textquotedblleft math
 italic\textquotedblright\ and \textquotedblleft italic\textquotedblright .
 The math italic font is designed so that the spacing between adjacent
-letters is correct for implicit multiplication or function application $%
-xy+fx $. The italic font is designed so the letter spacing is correct for
-words. (I\ have set Shift-F6 to give \textit{italic font}.)
+letters is correct for implicit multiplication or function application $xy+fx
+$. The italic font is designed so the letter spacing is correct for words.
+(I\ have set Shift-F6 to give \textit{italic font}.)
 
 \item Opinion:\ I\ generally use italic (or math italic, if only one letter
 is used)\ for variables and \textrm{an upright font such as Roman}
@@ -351,7 +364,7 @@ curly brackets (braces) $\left\{ x\right\} $, Control-\TEXTsymbol{<} for
 angle brackets $\left\langle x\right\rangle $, Control-\TEXTsymbol{\backslash%
 } for absolute values $\left\vert x\right\vert $, and Control-\TEXTsymbol{%
 \vert} for norms $\left\Vert x\right\Vert $. Use Insert \TEXTsymbol{>}%
-\TEXTsymbol{>}\ Brackets for any other combinations such as $\left\lceil
+\TEXTsymbol{>}\ Brackets (for any other combinations such as $\left\lceil
 x\right\rfloor $.
 
 \item Opinion:\ Bracket pairs entered this way will automatically enlarge.
@@ -393,10 +406,10 @@ bracket for cases:%
 \begin{equation*}
 f(x)=\left\{ 
 \begin{array}{lll}
-g(x) & \qquad & \text{if }x>0 \\ 
+g(x) & \qquad  & \text{if }x>0 \\ 
 h(x) &  & \text{otherwise}%
 \end{array}%
-\right.
+\right. 
 \end{equation*}
 
 \item Use Control-$\downarrow $ and Control-$\uparrow $ for sub- and
@@ -529,23 +542,23 @@ Shift-F12 & Sub$^{3}$section \\ \hline
 Scientific Workplace has good support for figures if they come from an image
 file. Use File \TEXTsymbol{>}\TEXTsymbol{>}\ Import Picture... or Alt-f-i 
 %TCIMACRO{%
-%\FRAME{ftbFU}{5.1747in}{3.3176in}{0pt}{\Qcb{A simplified view of LaTeX bibligraphy generation.}}{\Qlb{fig-bibtex}}{figure.png}{%
-%\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 5.1747in;height 3.3176in;depth 0pt;original-width 4.9664in;original-height 3.1739in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/figure.png';file-properties "XNPEU";}}}%
+%\FRAME{ftbFU}{5.2295in}{3.352in}{0pt}{\Qcb{A simplified view of LaTeX bibligraphy generation.}}{\Qlb{fig-bibtex}}{figure.png}{%
+%\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "F";width 5.2295in;height 3.352in;depth 0pt;original-width 5.1733in;original-height 3.3062in;cropleft "0";croptop "1";cropright "1";cropbottom "0";filename 'graphics/figure.png';file-properties "XNPEU";}}}%
 %BeginExpansion
 \ifcase\msipdfoutput
-\FRAME{ftbFU}{5.1747in}{3.3176in}{0pt}{\Qcb{A simplified view of LaTeX
+\FRAME{ftbFU}{5.2295in}{3.352in}{0pt}{\Qcb{A simplified view of LaTeX
 bibligraphy generation.}}{\Qlb{fig-bibtex}}{figure.png}{%
 \special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
-TRUE;display "USEDEF";valid_file "F";width 5.1747in;height 3.3176in;depth
-0pt;original-width 4.9664in;original-height 3.1739in;cropleft "0";croptop
+TRUE;display "USEDEF";valid_file "F";width 5.2295in;height 3.352in;depth
+0pt;original-width 5.1733in;original-height 3.3062in;cropleft "0";croptop
 "1";cropright "1";cropbottom "0";filename
 'graphics/figure.png';file-properties "XNPEU";}}%
 \else
 \begin{figure}[tb]\centering
 \includegraphics[
-natheight=3.1739in, natwidth=4.9664in, height=3.3176in, width=5.1747in]
-{C:/Users/theo/Documents/munthesis/graphics/figure__1.png}\caption{A
-simplified view of LaTeX bibligraphy generation.}\label{fig-bibtex}%
+natheight=3.3062in, natwidth=5.1733in, height=3.352in, width=5.2295in]
+{C:/Users/theo/Documents/munthesis/munthesis/graphics/figure__1.pdf}\caption{%
+A simplified view of LaTeX bibligraphy generation.}\label{fig-bibtex}%
 \end{figure}%
 \fi
 %EndExpansion
@@ -583,12 +596,6 @@ CP & \sqsubseteq & CS%
 \end{figure}%
 %EndExpansion
 
-By the way there are several packages that make really fancy commutativity
-diagrams. Figure \ref{fig-eqn-as-figure} simply uses a matrix (Insert 
-\TEXTsymbol{>}\TEXTsymbol{>}\ Matrix --- which produces LaTeX's
-\textquotedblleft array\textquotedblright\ environment) as a quick and dirty
-way to make simple commutativity diagrams.
-
 To create a figure that is not based on an image file, use the fragment
 \textquotedblleft figure\textquotedblright\ or, for single spacing,
 \textquotedblleft ssfigure\textquotedblright .\footnote{%
@@ -598,6 +605,19 @@ list or type Alt-4. Then pick the fragment you need.
 \par
 You can create your own fragments, by selecting some text and then File 
 \TEXTsymbol{>}\TEXTsymbol{>}\ Save Fragment ...}
+
+By the way there are several packages that make really fancy commutativity
+diagrams. Figure \ref{fig-eqn-as-figure} simply uses a matrix (Insert 
+\TEXTsymbol{>}\TEXTsymbol{>}\ Matrix --- which produces LaTeX's
+\textquotedblleft array\textquotedblright\ environment) as a quick and dirty
+way to make simple commutativity diagrams.
+
+For really snazy figures you can use the TikZ package. See 
+\begin{equation*}
+\text{\url{http://www.texample.net/tikz/examples/all/}}
+\end{equation*}
+
+\noindent for lots of examples.
 
 \subsection{Tables}
 
